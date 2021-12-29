@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(180deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    height: 18vh;
+    width: 100%;
+}
+.navbutton {
+    width: 15%;
+    text-align: center;
+}
+
+.logocenter{
+    width: 40%;
+    text-align: center;
+    height: 100%;
+}
+.logocenter h2 {
+    font-family: 'MedievalSharp';
+    font-size: 80px;
+    margin: 20px 0 10px 0;
+}

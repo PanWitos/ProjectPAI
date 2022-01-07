@@ -25,6 +25,7 @@ body {
 .logo h1{
     font-family: 'MedievalSharp';
     font-size: 120px;
+    margin-bottom: 0px;
 }
 .loginform{
     background: #FFFFFF 0% 0% no-repeat padding-box;

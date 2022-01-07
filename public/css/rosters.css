@@ -6,21 +6,129 @@
     background: transparent linear-gradient(180deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     opacity: 1;
-    height: 18vh;
+    height: 19vh;
     width: 100%;
 }
 .navbutton {
     width: 15%;
     text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbutton h4 {
+    margin: 5px;
+    height: 20%;
+    font-size: 30px;
+}
+.navbutton>div {
+    height: 60%;
+    margin: auto auto 0 auto;
+    display: flex;
+}
+
+.navbutton>div>div {
+    height: 100px;
+    width: 100px;
+    border: 2px solid #000000;
+    border-radius: 100%;
+    margin: auto;
+    display: flex;
+}
+.navbutton img {
+    height: 60%;
+    margin: auto;
 }
 
 .logocenter{
     width: 40%;
     text-align: center;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .logocenter h2 {
     font-family: 'MedievalSharp';
     font-size: 80px;
-    margin: 20px 0 10px 0;
+    margin: 15px 0 0 0;
+}
+
+.logocenter img {
+    width: 500px;
+}
+
+.lowernav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(0deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    height: 5vh;
+    width: 100%;
+}
+.subnavbutton {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.subnavbutton:nth-child(3){
+    margin-right: 0;
+    margin-left: auto;
+}
+.subnavbutton img {
+    height: 50%;
+    margin: 3px auto auto auto;
+}
+
+.subnavbutton p {
+    margin: 1px;
+    font-size: 15px;
+}
+
+.subnavbutton:nth-child(3) img{
+    height:100%;
+    margin: auto;
+}
+
+.section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.rosters>div {
+    border: 1px solid gray;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+.rosters>div>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rosters>div>h2 {
+    margin: 15px 0px 0px 30px;
+    font-size: 40px;
+}
+
+.rosters>div>div>p {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 20px;
 }

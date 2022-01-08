@@ -13,4 +13,9 @@ class DefaultController extends AppController {
     {
         $this->render('rosters');
     }
+
+    public function catalogue()
+    {
+        $this->render('catalogue');
+    }
 }

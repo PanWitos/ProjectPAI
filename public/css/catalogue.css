@@ -51,4 +51,34 @@
   
 .dropdown:hover .dropbtn {background-color: transparent;}
 
+.content .dropbtn {
+    border: 1px solid gray;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.content .dropdown {
+    width: 90%
+}
+
+.content .dropdown-content a {
+    color: black;
+    width: 100%;
+    height: 100px;
+    display: block;
+    text-align: center;
+}
+.content h2 {
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: 25px;
+}
+.content a h2 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 

@@ -62,5 +62,28 @@
                 </div>
             </div>
         </div>
+        <div class = "content">
+            <div class="dropdown">
+                <button class="dropbtn"><h2>Army</h2></button>
+                    <div class="dropdown-content">
+                        <a href="#"><h2>cosik</h2></a>
+                        <a href="#"><h2>cosik</h2></a>
+                    </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><h2>Army</h2></button>
+                    <div class="dropdown-content">
+                        <a href="#"><h2>cosik</h2></a>
+                        <a href="#"><h2>cosik</h2></a>
+                    </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><h2>Army</h2></button>
+                    <div class="dropdown-content">
+                        <a href="#"><h2>cosik</h2></a>
+                        <a href="#"><h2>cosik</h2></a>
+                    </div>
+            </div>
+        </div>
     </div>
 </body>

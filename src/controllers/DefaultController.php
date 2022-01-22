@@ -18,4 +18,9 @@ class DefaultController extends AppController {
     {
         $this->render('catalogue');
     }
+
+    public function item()
+    {
+        $this->render('item');
+    }
 }

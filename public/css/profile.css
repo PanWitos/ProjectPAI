@@ -8,3 +8,60 @@
     height: 5vh;
     width: 100%;
 }
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    font-size: 30px;
+}
+
+.left-content{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 100%;
+}
+
+.upper-content{
+    height: 50%;
+    margin: 7vh auto auto auto; 
+    width: 100%;
+    text-align: center;
+}
+
+.lower-content{
+    height: 45%;
+    margin: 5vh auto;
+    width: 100%;
+    text-align: center;
+}
+
+.right-content{
+    width: 45%;
+    margin: auto;
+}
+
+.imagebox {
+    width: 50%;
+    height: 30vh;
+    margin: auto;
+}
+
+.imagebox img {
+    height: 100%;
+}
+
+.info-bar {
+    height: 6vh;
+    background: #8800B1 0% 0% no-repeat padding-box;
+    width: 100%;
+    border-top: 1px solid #707070;
+    text-align: left;
+}
+
+.info {
+    text-align: left;
+}

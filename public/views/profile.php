@@ -23,7 +23,7 @@
         <div class="navbutton">
             <div>
                 <div>
-                    <a href="#"><img src="public/img/book.png"></a>
+                    <a href="http://localhost:8080/catalogue"><img src="public/img/book.png"></a>
                 </div>
             </div>
             <h4>Catalogue</h4>
@@ -50,4 +50,32 @@
         </div>
     </header>
     <div class="lowernav"></div>
+    <div class="content">
+        <div class="left-content">
+            <div class="upper-content">
+                <div class="imagebox">
+                    <img src="public/img/naz.gif">
+                </div>
+            </div>
+            <div class="lower-content">
+                <div class="info-bar"></div>
+                <div class="info">
+                    <p>Siema</p>
+                    <p>Siema</p>
+                    <p>Siema</p>
+                    <p>Siema</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="info-bar"></div>
+            <p>Siema</p>
+            <div class="info-bar"></div>
+            <p>Siema</p>
+            <div class="info-bar"></div>
+            <p>Siema</p>
+            <div class="info-bar"></div>
+            <p>Siema</p>
+        </div>
+    </div>
 </div>

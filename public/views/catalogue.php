@@ -43,7 +43,7 @@
         <div class="navbutton">
             <div>
                 <div>
-                    <a href="#"><img src="public/img/helm.png"></a>
+                    <a href="http://localhost:8080/profile"><img src="public/img/helm.png"></a>
                 </div>
             </div>
             <h4>Profile</h4>

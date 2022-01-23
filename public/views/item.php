@@ -34,7 +34,7 @@
         <div class="navbutton">
             <div>
                 <div>
-                    <a href="#"><img src="public/img/map.png"></a>
+                    <a href="http://localhost:8080/find"><img src="public/img/map.png"></a>
                 </div>
             </div>
             <h4>Find Players</h4>

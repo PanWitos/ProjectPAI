@@ -1,0 +1,63 @@
+.lowernav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(0deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    height: 5vh;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-area {
+    width: 75%;
+}
+
+.user-info {
+    height: 20vh;
+    border: 1px solid #707070;
+    width: 100%;
+}
+
+.user-info-two {
+    height: 12vh;
+    border: 1px solid #707070;
+    width: 100%;
+}
+
+.info-bar {
+    height: 6vh;
+    background: #8800B1 0% 0% no-repeat padding-box;
+    width: 100%;
+    border: 1px solid #707070;
+    text-align: left;
+}
+
+.chatbox {
+    height: 30vh;
+    border: 1px solid #707070;
+    width: 100%;
+    margin-top: auto;
+}
+
+.messagebox {
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #707070;
+}

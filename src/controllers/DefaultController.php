@@ -28,4 +28,9 @@ class DefaultController extends AppController {
     {
         $this->render('profile');
     }
+
+    public function find()
+    {
+        $this->render('find');
+    }
 }

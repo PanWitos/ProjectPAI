@@ -81,4 +81,40 @@
     margin-bottom: auto;
 }
 
+.lowernav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(0deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    height: 5vh;
+    width: 100%;
+}
+.subnavbutton {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.subnavbutton:nth-child(3){
+    margin-right: 0;
+    margin-left: auto;
+}
+.subnavbutton img {
+    height: 50%;
+    margin: 3px auto auto auto;
+}
+
+.subnavbutton p {
+    margin: 1px;
+    font-size: 15px;
+}
+
+.subnavbutton:nth-child(3) img{
+    height:100%;
+    margin: auto;
+}
 

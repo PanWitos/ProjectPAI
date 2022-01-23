@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/rosters.css">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="public/css/item.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
@@ -48,6 +48,17 @@
         </div>
     </header>
     <div class="lowernav">
-        
+        <div class="subnavbutton">
+                <img src="public/img/user.png">
+                <div><p>My Rosters</p></div>
+            </div>
+            <div class="subnavbutton">
+                <img src="public/img/earth.png">
+                <div><p>Browse</p></div>
+            </div>
+            <div class="subnavbutton">
+                <img src="public/img/plus.png">
+            </div>  
+        </div>
     </div>
 </body>

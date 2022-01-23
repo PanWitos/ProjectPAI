@@ -9,5 +9,6 @@ Router::get('', 'DefaultController');
 Router::get('rosters', 'DefaultController');
 Router::get('catalogue', 'DefaultController');
 Router::get('item', 'DefaultController');
+Router::get('profile', 'DefaultController');
 
 Router::run($path);

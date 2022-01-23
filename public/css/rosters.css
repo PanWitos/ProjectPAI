@@ -21,7 +21,7 @@
     margin-left: auto;
 }
 .subnavbutton img {
-    height: 50%;
+    height: 2.5vh;
     margin: 3px auto auto auto;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .subnavbutton:nth-child(3) img{
-    height:100%;
+    height: 5vh;
     margin: auto;
 }
 

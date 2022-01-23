@@ -43,7 +43,9 @@ body {
     display: flex;
 }
 .navbutton img {
-    height: 60%;
+    height: 7vh;
+}
+.navbutton a {
     margin: auto;
 }
 

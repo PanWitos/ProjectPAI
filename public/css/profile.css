@@ -1,0 +1,10 @@
+.lowernav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(0deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    height: 5vh;
+    width: 100%;
+}

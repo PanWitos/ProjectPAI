@@ -87,16 +87,25 @@
 .info-one {
     height: 7vh;
     width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
 }
 
 .info-two {
     height: 7vh;
     width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
 }
 
 .info-three {
     height: 7vh;
     width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
 }
 
 .left-content {
@@ -124,6 +133,12 @@
     margin: auto;
 }
 
+.lower-content>div {
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+}
+
 .image-content{
     width: 50%;
     height: 100%;
@@ -139,4 +154,64 @@
     width: 50%;
     height: 100%;
     border: 1px solid #707070;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+}
+
+@media only screen and (max-device-width: 425px) {
+    html, body {
+        height: 100%;
+    }
+    .basecontainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .lowernav {
+        order: 1;
+    }
+    .content {
+        order: 2;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 4em;
+    }
+
+    .left-content {
+        width: 100%;
+        height: 50%;
+    }
+
+    .text-content {
+        border-top: none;
+    }
+
+    .image-content {
+        border-top: none;
+        overflow: hidden;
+    }
+
+    .right-content {
+        width: 100%;
+        height: 50%;
+    }
+
+    .upper-content {
+        height: 70%;
+    }
+
+    .lower-content {
+        height: 30%;
+    }
+    .navbar .navbutton:nth-child(2) img {
+        opacity: 100%;
+    }
+
+    .info-bar {
+        height: 5vh;
+    }
 }

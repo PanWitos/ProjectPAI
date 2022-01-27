@@ -29,8 +29,7 @@
             <h4>Catalogue</h4>
         </div>
         <div class="logocenter">
-            <h2>WARMONGER</h2>
-            <img src="public/img/logo.png">
+            <img src="public/img/logo2.png">
         </div>  
         <div class="navbutton">
             <div>
@@ -52,7 +51,7 @@
     <div class="lowernav">
         <div class="cataloguediv">
             <div class="dropdown">
-                <button class="dropbtn">Choose army</button>
+                <button class="dropbtn"><h2>Choose army</h2></button>
                 <div class="dropdown-content">
                     <a href="#">Link 1</a>
                     <a href="#">Link 2</a>

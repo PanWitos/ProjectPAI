@@ -61,3 +61,77 @@
     height: 5vh;
     border: 1px solid #707070;
 }
+
+@media only screen and (max-device-width: 425px) {
+    html, body {
+        height: 100%;
+    }
+    .basecontainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .lowernav {
+        order: 1;
+        display: none;
+    }
+
+    .content {
+        order: 2;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar {
+        order: 2;
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map-area {
+        order: 1;
+        height: 80%;
+        width: 100%;
+    }
+
+    .user-info {
+        height: 100%;
+        border: 1px solid #707070;
+        width: 25%;
+    }
+    
+    .user-info-two {
+        height: 100%;
+        border: 1px solid #707070;
+        width: 75%;
+    }
+    
+    .info-bar {
+        display: none;
+        
+    }
+    
+    .chatbox {
+        display: none;
+    }
+    
+    .messagebox {
+        display: none;
+    }
+
+    .navbar .navbutton:nth-child(4) img {
+        opacity: 100%;
+    }
+}

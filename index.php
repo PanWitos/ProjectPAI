@@ -11,5 +11,6 @@ Router::get('catalogue', 'DefaultController');
 Router::get('item', 'DefaultController');
 Router::get('profile', 'DefaultController');
 Router::get('find', 'DefaultController');
+Router::get('roster', 'DefaultController');
 
 Router::run($path);

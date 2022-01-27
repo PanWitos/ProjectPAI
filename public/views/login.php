@@ -18,8 +18,7 @@
             <button class="loginbutton">Login</button>
         </div>
         <div class="logo">
-            <h1>WARMONGER</h1>
-            <img src="public/img/logo.png">
+            <img src="public/img/logo2.png">
         </div>
     </div>
 </body>

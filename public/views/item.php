@@ -28,8 +28,7 @@
             <h4>Catalogue</h4>
         </div>
         <div class="logocenter">
-            <h2>WARMONGER</h2>
-            <img src="public/img/logo.png">
+            <img src="public/img/logo2.png">
         </div>  
         <div class="navbutton">
             <div>
@@ -50,15 +49,14 @@
     </header>
     <div class="lowernav">
         <div class="subnavbutton">
-                <a href="http://localhost:8080/catalogue"><img src="public/img/left-arrow.png"></a>
-            </div>
-            <div class="subnavbutton">
-                <p>Yout text Here</p>
-            </div>
-            <div class="subnavbutton">
-            <a href="#"><img src="public/img/plus.png"></a>
-            </div>  
+            <a href="http://localhost:8080/catalogue"><img src="public/img/left-arrow.png"></a>
         </div>
+        <div class="subnavbutton">
+            <p>Yout text Here</p>
+        </div>
+        <div class="subnavbutton">
+        <a href="#"><img src="public/img/plus.png"></a>
+        </div>  
     </div>
     <div class="content">
         <div class="left-content">
@@ -77,7 +75,7 @@
             </div>
             <div class="lower-content">
                 <div class="info-bar"><p>a</p></div>
-                <p>a</p>
+                <div><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></div>
             </div>
         </div>
         <div class="right-content">

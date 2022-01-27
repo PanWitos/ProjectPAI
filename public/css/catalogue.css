@@ -44,6 +44,11 @@
     display: block;
     
 }
+
+.lowernav h2 {
+    margin:auto;
+    font-size: 1em;
+}
   
 .dropdown-content a:hover {background-color: #ddd;}
   
@@ -68,18 +73,15 @@
     color: black;
     width: 100%;
     height: 100px;
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .content h2 {
     margin-top:auto;
     margin-bottom: auto;
     margin-left: 25px;
 }
-.content a h2 {
-    margin-top: auto;
-    margin-bottom: auto;
-}
+
 
 .lowernav {
     display: flex;
@@ -113,3 +115,71 @@
     margin: auto;
 }
 
+@media only screen and (max-device-width: 425px) {
+    html, body {
+        height: 100%;
+    }
+    .basecontainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .lowernav {
+        order: 1;
+    }
+
+    .lowernav h2 {
+        margin: auto;
+        width: 22%;
+        font-size: 1.2em;
+    }
+
+    .content {
+        order: 2;
+    }
+
+    .cataloguediv {
+        width: 90%;
+        margin: auto;
+    }
+
+    .dropbtn {
+        margin: 0;
+    }
+
+    .dropbtn h2 {
+        margin: auto;
+    }
+
+    .content .dropdown {
+        width: 100%;
+    }
+
+    .content .dropbtn {
+        height: 13vh;
+    }
+
+    .content .dropdown .dropbtn {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar .navbutton:nth-child(2) img {
+        opacity: 100%;
+    }
+
+    .dropdown-content {
+        margin: 0;
+        width: 99%;
+    }
+
+    .content .dropdown-content a {
+        height: 13vh;
+    } 
+
+    .content h2 {
+        font-size: 3em;
+    }
+}

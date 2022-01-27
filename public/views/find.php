@@ -10,54 +10,54 @@
 </head>
 
 <body>
-<div class="basecontainer">
-    <header class="navbar">
-        <div class="navbutton">
-            <div>
+    <div class="basecontainer">
+        <header class="navbar">
+            <div class="navbutton">
                 <div>
-                    <a href="http://localhost:8080/rosters"><img src="public/img/scroll.png"></a>
+                    <div>
+                        <a href="http://localhost:8080/rosters"><img src="public/img/scroll.png"></a>
+                    </div>
                 </div>
+                    <h4>Rosters</h4>
             </div>
-                <h4>Rosters</h4>
-        </div>
-        <div class="navbutton">
-            <div>
+            <div class="navbutton">
                 <div>
-                    <a href="http://localhost:8080/catalogue"><img src="public/img/book.png"></a>
+                    <div>
+                        <a href="http://localhost:8080/catalogue"><img src="public/img/book.png"></a>
+                    </div>
                 </div>
+                <h4>Catalogue</h4>
             </div>
-            <h4>Catalogue</h4>
-        </div>
-        <div class="logocenter">
-            <h2>WARMONGER</h2>
-            <img src="public/img/logo.png">
-        </div>  
-        <div class="navbutton">
-            <div>
+            <div class="logocenter">
+                <img src="public/img/logo2.png">
+            </div>  
+            <div class="navbutton">
                 <div>
-                    <a href="#"><img src="public/img/map.png"></a>
+                    <div>
+                        <a href="#"><img src="public/img/map.png"></a>
+                    </div>
                 </div>
+                <h4>Find Players</h4>
             </div>
-            <h4>Find Players</h4>
-        </div>
-        <div class="navbutton">
-            <div>
+            <div class="navbutton">
                 <div>
-                    <a href="http://localhost:8080/profile"><img src="public/img/helm.png"></a>
+                    <div>
+                        <a href="http://localhost:8080/profile"><img src="public/img/helm.png"></a>
+                    </div>
                 </div>
+                <h4>Profile</h4>
             </div>
-            <h4>Profile</h4>
+        </header>
+        <div class="lowernav"></div>
+        <div class="content">
+            <div class="sidebar">
+                <div class="user-info"></div>
+                <div class="info-bar"></div>
+                <div class="user-info-two"></div>
+                <div class="chatbox"></div>
+                <div class="messagebox"></div>
+            </div>
+            <div class="map-area"></div>
         </div>
-    </header>
-    <div class="lowernav"></div>
-    <div class="content">
-        <div class="sidebar">
-            <div class="user-info"></div>
-            <div class="info-bar"></div>
-            <div class="user-info-two"></div>
-            <div class="chatbox"></div>
-            <div class="messagebox"></div>
-        </div>
-        <div class="map-area"></div>
     </div>
-</div>
+</body>

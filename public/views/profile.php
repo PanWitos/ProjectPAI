@@ -29,8 +29,7 @@
             <h4>Catalogue</h4>
         </div>
         <div class="logocenter">
-            <h2>WARMONGER</h2>
-            <img src="public/img/logo.png">
+            <img src="public/img/logo2.png">
         </div>  
         <div class="navbutton">
             <div>

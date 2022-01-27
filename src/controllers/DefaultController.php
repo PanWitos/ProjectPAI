@@ -33,4 +33,9 @@ class DefaultController extends AppController {
     {
         $this->render('find');
     }
+
+    public function roster()
+    {
+        $this->render('roster');
+    }
 }

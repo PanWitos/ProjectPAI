@@ -11,11 +11,23 @@
 <body>
     <div class="container">
         <div class="login">
-            <form class="loginform">
-                <input class="inputspace" name="email" type="text" value="Email">
-                <input class="inputspace" name="password" type="password" value="Password">
-            </form> 
-            <button class="loginbutton">Login</button>
+            <form class="loginform" action="login" method="POST">
+                <div class="insideform">
+                    <div class=""message>
+                        <?php if(isset($messages))
+                            {
+                                foreach ($messages as $message)
+                                {
+                                    echo $message;
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input class="inputspace" name="email" type="text" placeholder="Email">
+                    <input class="inputspace" name="password" type="password" placeholder="Password">
+                </div>
+                <button type="SUBMIT" class="loginbutton">Login</button>
+            </form>
         </div>
         <div class="logo">
             <img src="public/img/logo2.png">

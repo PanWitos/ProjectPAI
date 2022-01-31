@@ -13,5 +13,6 @@ Router::get('profile', 'DefaultController');
 Router::get('find', 'DefaultController');
 Router::get('roster', 'DefaultController');
 Router::post('login', 'SecurityController');
+Router::post('addRoster', 'RosterController');
 
 Router::run($path);

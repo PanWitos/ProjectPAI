@@ -18,13 +18,17 @@ class RosterController extends AppController
         $this->rosterRepository = new RosterRepository();
     }
 
+    public function rosters()
+    {
+        $rosters = $this->rosterRepository->getRosters();
+        $this->render('rosters', ['rosters' => $rosters]);
+    }
 
     public function addRoster()
     {
         if($this->isPost())
         {
-            //TODO
-            $roster = new Roster($_POST['title'], $_POST['game']);
+            $roster = new Roster($_POST['title'], $_POST['game'], 0);
             $this->rosterRepository->addRoster($roster);
 
             return $this->render('rosters', ['messages' => $this->messages, 'roster' => $roster]);

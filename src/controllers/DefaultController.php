@@ -9,11 +9,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function rosters()
-    {
-        $this->render('rosters');
-    }
-
     public function catalogue()
     {
         $this->render('catalogue');

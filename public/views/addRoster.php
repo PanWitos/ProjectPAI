@@ -64,7 +64,6 @@
                 <input name="title" type="text" placeholder="Title">
                 <input name="game" type="text" placeholder="game">
                 <button type="submit">Send</button>
-
             </form>
         </section>
     </div>

@@ -22,7 +22,8 @@ class RosterRepository extends Repository
 
         return new Roster(
             $roster['title'],
-            $roster['game']
+            $roster['game'],
+            $roster['points']
         );
     }
 
@@ -39,5 +40,22 @@ class RosterRepository extends Repository
         $stmt->execute([
             $authorId, $roster->getTitle(), $roster->getGame(), $startPoints, $date->format('Y-m-d')
         ]);
+    }
+
+    public function getRosters(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM rosters
+        ');
+        $stmt->execute();
+        $rosters = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($rosters as $roster){
+            $result[] = new Roster($roster['title'], $roster['game'], $roster['points']);
+        }
+
+        return $result;
     }
 }

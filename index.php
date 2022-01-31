@@ -6,7 +6,7 @@ $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url( $path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
-Router::get('rosters', 'DefaultController');
+Router::get('rosters', 'RosterController');
 Router::get('catalogue', 'DefaultController');
 Router::get('item', 'DefaultController');
 Router::get('profile', 'DefaultController');

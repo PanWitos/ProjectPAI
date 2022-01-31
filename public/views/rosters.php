@@ -62,12 +62,14 @@
             </div>  
         </div>
         <section class="rosters">
+            <?php foreach ($rosters as $roster): ?>
             <div id="roster-1">
-                <h2><?= $roster->getTitle() ?></h2>
+                <h2><?= $roster-> getTitle(); ?></h2>
                 <div>
-                    <p>Game:<?= $roster->getGame() ?></p> <p>Author: John Smith</p> <p>Pts: 2000</p>
+                    <p>Game: <?= $roster-> getGame(); ?></p> <p>Author: John Smith</p> <p>Pts: <?= $roster-> getPoints(); ?></p>
                 </div>
             </div>
+            <?php endforeach; ?>
         </section>
     </div>
 </body>

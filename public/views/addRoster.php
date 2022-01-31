@@ -62,7 +62,6 @@
                 }
                 ?>
                 <input name="title" type="text" placeholder="Title">
-                <textarea name="description" rows="5" placeholder="Description"></textarea>
                 <input name="game" type="text" placeholder="game">
                 <button type="submit">Send</button>
 

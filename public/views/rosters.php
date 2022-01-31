@@ -63,9 +63,9 @@
         </div>
         <section class="rosters">
             <div id="roster-1">
-                <h2>Unnamed Roster</h2>
+                <h2><?= $roster->getTitle() ?></h2>
                 <div>
-                    <p>Game: Warhammer Age Of Sigmar</p> <p>Author: John Smith</p> <p>Pts: 2000</p>
+                    <p>Game:<?= $roster->getGame() ?></p> <p>Author: John Smith</p> <p>Pts: 2000</p>
                 </div>
             </div>
         </section>

@@ -3,6 +3,7 @@
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Roster.php';
 
+
 class RosterRepository extends Repository
 {
     public function getRoster(int $id): ?Roster
@@ -21,8 +22,22 @@ class RosterRepository extends Repository
 
         return new Roster(
             $roster['title'],
-            $roster['game'],
-            $roster['points']
+            $roster['game']
         );
+    }
+
+    public function addRoster(Roster $roster): void
+    {
+        $date = new DateTime();
+        $stmt = $this->database->connect()->prepare('
+        INSERT INTO rosters (author_id, title, game, points, created_at)
+        VALUES (?,?,?,?,?)
+        ');
+
+        $authorId = 1;
+        $startPoints = 0;
+        $stmt->execute([
+            $authorId, $roster->getTitle(), $roster->getGame(), $startPoints, $date->format('Y-m-d')
+        ]);
     }
 }

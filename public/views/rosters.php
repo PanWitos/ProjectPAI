@@ -58,7 +58,7 @@
                 <div><p>Browse</p></div>
             </div>
             <div class="subnavbutton">
-                <a href="#"><img src="public/img/plus.png"></a>
+                <a href="http://localhost:8080/addRoster"><img src="public/img/plus.png"></a>
             </div>  
         </div>
         <section class="rosters">

@@ -14,5 +14,6 @@ Router::get('find', 'DefaultController');
 Router::get('roster', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::post('addRoster', 'RosterController');
+Router::post('register', 'SecurityController');
 
 Router::run($path);

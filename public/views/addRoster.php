@@ -15,7 +15,7 @@
             <div class="navbutton">
                 <div>
                     <div>
-                        <a href="#"><img src="public/img/scroll.png"></a>
+                        <a href="http://localhost:8080/rosters"><img src="public/img/scroll.png"></a>
                     </div>
                 </div>
                     <h4>Rosters</h4>

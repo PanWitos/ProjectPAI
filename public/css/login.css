@@ -68,6 +68,18 @@ body {
     background: transparent linear-gradient(0deg, #69007E 0%, #000000 100%) 0% 0% no-repeat padding-box;
 }
 
+.register{
+    height: 50vh;
+    width: 40%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.register>.loginform>.insideform>.inputspace {
+    height: 12%;
+}
+
 
 @media only screen and (max-device-width: 425px) {
     .container {
@@ -88,6 +100,16 @@ body {
     }
 
     .inputspace {
+        font-size: 3em;
+    }
+
+    .register{
+        width: 100%;
+        order: 2
+    }
+
+    .register>.loginform>.insideform>.inputspace {
+        height: 12%;
         font-size: 3em;
     }
 

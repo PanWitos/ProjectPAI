@@ -13,7 +13,7 @@
         <div class="login">
             <form class="loginform" action="login" method="POST">
                 <div class="insideform">
-                    <div class=""message>
+                    <div class="message">
                         <?php if(isset($messages))
                             {
                                 foreach ($messages as $message)

@@ -6,9 +6,16 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
+    private $userRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->userRepository = new UserRepository();
+    }
+
     public function login()
     {
-        $userRepository = new UserRepository();
 
         if(!$this->isPost()) {
             return $this->render('login');
@@ -17,7 +24,7 @@ class SecurityController extends AppController
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $user = $userRepository->getUser($email);
+        $user = $this->userRepository->getUser($email);
 
         if(!$user) {
             return $this->render('login', ['messages' => ['User not exist']]);
@@ -61,6 +68,7 @@ class SecurityController extends AppController
         $user->setPhone($phone);
 
         $this->userRepository->addUser($user);
+
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }

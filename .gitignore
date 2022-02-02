@@ -1,6 +1,7 @@
 config.php
 erd.drawio
 .idea
+.idea/
 .vscode
 .idea/dataSources.xml
 .idea/php.xml

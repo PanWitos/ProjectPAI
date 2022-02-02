@@ -62,14 +62,12 @@ class RosterRepository extends Repository
 
     public function getRosterByTitle(string $searchString)
     {
-        $searchString = '%'.strtolower($searchString).'%';
+        $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters WHERE LOWER(title) LIKE :search
+        SELECT * FROM rosters WHERE LOWER(title) LIKE :search OR LOWER(game) LIKE :search
         ');
-
         $stmt->bindParam(":search", $searchString, PDO::PARAM_STR);
-        
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

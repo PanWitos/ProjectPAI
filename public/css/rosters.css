@@ -109,6 +109,8 @@ button{
 button:hover{
     background: transparent linear-gradient(0deg, #69007E 0%, #000000 100%) 0% 0% no-repeat padding-box;
 }
+
+
 @media only screen and (max-device-width: 425px) {
     html, body {
         height: 100%;

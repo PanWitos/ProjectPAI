@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>ROSTERS PAGE</title>
 </head>
 
@@ -69,10 +70,19 @@
             <div id="roster-1">
                 <h2><?= $roster-> getTitle(); ?></h2>
                 <div>
-                    <p>Game: <?= $roster-> getGame(); ?></p> <p>Author: John Smith</p> <p>Pts: <?= $roster-> getPoints(); ?></p>
+                    <p>Game: </p><p><?= $roster-> getGame(); ?></p> <p>Author: John Smith</p> <p>Pts:</p><p><?= $roster-> getPoints(); ?></p>
                 </div>
             </div>
             <?php endforeach; ?>
         </section>
     </div>
 </body>
+
+<template id="roster-template">
+    <div id="">
+        <h2>title</h2>
+        <div>
+            <p>Game:</p><p name="game">game</p> <p>Author: John Smith</p> <p>Pts:</p><p name="points">points</p>
+        </div>
+    </div>
+</template>

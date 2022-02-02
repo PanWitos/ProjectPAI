@@ -70,7 +70,11 @@ if (!isset($_SESSION['userid']))
                 }
                 ?>
                 <input name="title" type="text" placeholder="Title">
-                <input name="game" type="text" placeholder="game">
+                <select id="gameselect" name="game" required>
+                    <?php foreach($games as $game):?>
+                        <option value=<?=serialize($game)?>><?=$game?></option>
+                    <?php endforeach; ?>
+                </select>
                 <button type="submit">Send</button>
             </form>
         </section>

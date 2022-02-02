@@ -3,7 +3,6 @@ const rosterContainer = document.querySelector(".rosters");
 
 search.addEventListener("keyup", function (event) {
    if(event.key === "Enter") {
-       console.log("Wcisnales Enter");
        event.preventDefault();
 
        const data = {search: this.value};
@@ -38,7 +37,7 @@ function createRoster(roster) {
     const title = clone.querySelector("h2");
     title.innerHTML = roster.title;
     const game = clone.querySelector("p[name=\"game\"]");
-    game.innerHTML = roster.game;
+    game.innerHTML = roster.name;
     const points = clone.querySelector("p[name=\"points\"]");
     points.innerHTML = roster.points;
 

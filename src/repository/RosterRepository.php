@@ -2,6 +2,7 @@
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Roster.php';
+require_once __DIR__.'/../models/Game.php';
 
 
 class RosterRepository extends Repository
@@ -9,7 +10,7 @@ class RosterRepository extends Repository
     public function getRoster(int $id): ?Roster
     {
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters WHERE id = :id');
+        SELECT * FROM rosters r JOIN games g ON r.games_id = g.id WHERE r.id = :id');
         $stmt->bindParam(':id',$id, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -20,25 +21,34 @@ class RosterRepository extends Repository
             return null;
         }
 
-        return new Roster(
+        $game = new Game($roster['games_id'],$roster['name']);
+
+        $newRoster = new Roster(
             $roster['title'],
-            $roster['game'],
-            $roster['points']
+            $game,
+            $roster['points'],
+            1
         );
+
+        $newRoster.setId($id);
+
+        return $newRoster;
     }
 
     public function addRoster(Roster $roster): void
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-        INSERT INTO rosters (author_id, title, game, points, created_at)
-        VALUES (?,?,?,?,?)
+        INSERT INTO rosters (author_id, title, games_id, points, created_at, factions_id)
+        VALUES (?,?,?,?,?,?)
         ');
 
-        $authorId = 1;
+        session_start();
+        $authorId = $_SESSION['userid'];
         $startPoints = 0;
+        $factionsId = 1;
         $stmt->execute([
-            $authorId, $roster->getTitle(), $roster->getGame(), $startPoints, $date->format('Y-m-d')
+            $authorId, $roster->getTitle(), $roster->getGame()->getId(), $startPoints, $date->format('Y-m-d'), $factionsId
         ]);
     }
 
@@ -48,13 +58,15 @@ class RosterRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM rosters
+            SELECT * FROM rosters join games on rosters.games_id = games.id
         ');
         $stmt->execute();
         $rosters = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($rosters as $roster){
-            $result[] = new Roster($roster['title'], $roster['game'], $roster['points']);
+            $game = new Game($roster['games_id'], $roster['name']);
+            $result[] = new Roster($roster['title'], $game, $roster['points'], 1);
+            end($result)->setId($roster['id']);
         }
 
         return $result;
@@ -65,7 +77,7 @@ class RosterRepository extends Repository
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters WHERE LOWER(title) LIKE :search OR LOWER(game) LIKE :search
+        SELECT * FROM rosters join games on rosters.games_id = games.id WHERE LOWER(title) LIKE :search
         ');
         $stmt->bindParam(":search", $searchString, PDO::PARAM_STR);
         $stmt->execute();

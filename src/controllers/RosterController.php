@@ -2,20 +2,22 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Roster.php';
+require_once __DIR__.'/../models/Game.php';
 require_once __DIR__.'/../repository/RosterRepository.php';
+require_once __DIR__.'/../repository/GameRepository.php';
 
 class RosterController extends AppController
 {
-    const MAX_FILE_SIZE = 1024*1024;
-    const SUPPORTED_TYPES = ['image/png','image/jpeg'];
 
     private $messages = [];
     private $rosterRepository;
+    private $gameRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->rosterRepository = new RosterRepository();
+        $this->gameRepository = new GameRepository();
     }
 
     public function rosters()
@@ -28,12 +30,12 @@ class RosterController extends AppController
     {
         if($this->isPost())
         {
-            $roster = new Roster($_POST['title'], $_POST['game'], 0);
+            $roster = new Roster($_POST['title'], unserialize($_POST['game']), 0, 1);
             $this->rosterRepository->addRoster($roster);
 
             return $this->render('rosters', ['rosters' => $this->rosterRepository->getRosters(), 'messages' => $this->messages]);
         }
-        $this->render("addRoster", ['messages' => $this->messages]);
+        $this->render("addRoster", ['messages' => $this->messages, 'games' => $this->gameRepository->getGames()]);
     }
 
     public function search()

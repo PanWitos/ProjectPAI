@@ -35,4 +35,9 @@ class RosterController extends AppController
         }
         $this->render("addRoster", ['messages' => $this->messages]);
     }
+
+    public function search()
+    {
+        //TODO
+    }
 }

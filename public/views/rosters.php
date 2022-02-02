@@ -58,6 +58,9 @@
                 <div><p>Browse</p></div>
             </div>
             <div class="subnavbutton">
+                <input placeholder="search roster">
+            </div>
+            <div class="subnavbutton">
                 <a href="http://localhost:8080/addRoster"><img src="public/img/plus.png"></a>
             </div>  
         </div>

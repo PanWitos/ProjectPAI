@@ -3,3 +3,5 @@ erd.drawio
 .idea
 .vscode
 .idea/dataSources.xml
+.idea/php.xml
+.idea/dataSources.xml

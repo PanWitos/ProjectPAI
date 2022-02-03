@@ -58,4 +58,10 @@ class RosterController extends AppController
             echo json_encode($this->rosterRepository->getRosterByTitle($decoded['search']));
         }
     }
+
+    public function roster()
+    {
+        $roster = $this->rosterRepository->getRoster($_GET['id']);
+        $this->render("roster", ['messages' => $this->messages, 'roster' => $roster]);
+    }
 }

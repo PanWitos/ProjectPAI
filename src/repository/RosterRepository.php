@@ -11,7 +11,7 @@ class RosterRepository extends Repository
     public function getRoster(int $id): ?Roster
     {
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters r JOIN games g ON r.games_id = g.id JOIN users u ON r.author_id = u.id JOIN users_details ud on u.id_users_detail = ud.id WHERE r.id = :id');
+        SELECT * FROM rosters  JOIN games  ON games_id = game_id JOIN users ON author_id = user_id JOIN users_details on id_users_detail = ud_id WHERE roster_id = :id');
         $stmt->bindParam(':id',$id, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -34,7 +34,7 @@ class RosterRepository extends Repository
             $user
         );
 
-        $newRoster.setId($id);
+        $newRoster->setId($id);
 
         return $newRoster;
     }
@@ -83,7 +83,7 @@ class RosterRepository extends Repository
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters join games on rosters.games_id = games.id WHERE LOWER(title) LIKE :search
+        SELECT * FROM rosters join games on games_id = game_id WHERE LOWER(roster_title) LIKE :search
         ');
         $stmt->bindParam(":search", $searchString, PDO::PARAM_STR);
         $stmt->execute();

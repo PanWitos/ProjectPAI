@@ -58,7 +58,7 @@ if (!isset($_SESSION['userid']))
         </header>
         <div class="lowernav">
             <div class="subnavbutton">
-                <a href="#"><img src="public/img/left-arrow.png"></a>
+                <a href="http://localhost:8080/rosters"><img src="public/img/left-arrow.png"></a>
             </div>
             <div class="subnavbutton">
                 <a href="#"><img src="public/img/plus.png"></a>

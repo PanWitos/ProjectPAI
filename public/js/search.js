@@ -30,17 +30,19 @@ function loadRosters(rosters) {
 }
 
 function createRoster(roster) {
-    console.log('siema');
     const template = document.querySelector("#roster-template");
 
     const clone = template.content.cloneNode(true);
+    const href = `http://localhost:8080/roster?id=${roster.roster_id}`;
 
-    const title = clone.querySelector("h2");
-    title.innerHTML = roster.title;
+    const title = clone.querySelector("a");
+    title.innerHTML = roster.roster_title;
+    title.setAttribute('href',href);
     const game = clone.querySelector("p[name=\"game\"]");
-    game.innerHTML = roster.name;
+    game.innerHTML = roster.game_name;
     const points = clone.querySelector("p[name=\"points\"]");
     points.innerHTML = roster.points;
+
 
 
     rosterContainer.appendChild(clone);

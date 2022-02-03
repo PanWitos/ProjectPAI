@@ -76,7 +76,7 @@ if (!isset($_SESSION['userid']))
         <section class="rosters">
             <?php foreach ($rosters as $roster): ?>
             <div id="roster-1">
-                <h2><?= $roster-> getTitle(); ?></h2>
+                <h2><a href="http://localhost:8080/roster?id=<?= $roster->getId();?>"><?= $roster-> getTitle(); ?></a></h2>
                 <div>
                     <p>Game: </p><p><?= $roster-> getGame(); ?></p><p>Author: </p> <p><?= $roster-> getAuthor(); ?></p> <p>Pts:</p><p><?= $roster-> getPoints(); ?></p>
                 </div>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['userid']))
 
 <template id="roster-template">
     <div id="">
-        <h2>title</h2>
+        <h2><a>title</a></h2>
         <div>
             <p>Game:</p><p name="game">game</p> <p>Author: John Smith</p> <p>Pts:</p><p name="points">points</p>
         </div>

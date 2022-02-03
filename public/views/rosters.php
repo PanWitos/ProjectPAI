@@ -90,7 +90,7 @@ if (!isset($_SESSION['userid']))
     <div id="">
         <h2><a>title</a></h2>
         <div>
-            <p>Game:</p><p name="game">game</p> <p>Author: John Smith</p> <p>Pts:</p><p name="points">points</p>
+            <p>Game:</p><p name="game">game</p> <p>Author:</p><p name="author">author</p><p>Pts:</p><p name="points">points</p>
         </div>
     </div>
 </template>

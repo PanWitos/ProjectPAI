@@ -83,7 +83,7 @@ class RosterRepository extends Repository
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters join games on games_id = game_id WHERE LOWER(roster_title) LIKE :search
+        SELECT * FROM rosters join games on games_id = game_id join users on author_id = user_id join users_details on id_users_detail = ud_id WHERE LOWER(roster_title) LIKE :search
         ');
         $stmt->bindParam(":search", $searchString, PDO::PARAM_STR);
         $stmt->execute();

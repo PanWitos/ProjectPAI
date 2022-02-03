@@ -34,6 +34,7 @@ function createRoster(roster) {
 
     const clone = template.content.cloneNode(true);
     const href = `http://localhost:8080/roster?id=${roster.roster_id}`;
+    const name = roster.user_name.concat(" ", roster.user_surname);
 
     const title = clone.querySelector("a");
     title.innerHTML = roster.roster_title;
@@ -42,6 +43,8 @@ function createRoster(roster) {
     game.innerHTML = roster.game_name;
     const points = clone.querySelector("p[name=\"points\"]");
     points.innerHTML = roster.points;
+    const author = clone.querySelector("p[name=\"author\"]");
+    author.innerHTML = name;
 
 
 

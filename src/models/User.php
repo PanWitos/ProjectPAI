@@ -77,6 +77,11 @@ class User
         $this->id = $id;
     }
 
+    public function __toString()
+    {
+
+        return $this->name." ".$this->surname;
+    }
 
 
 }

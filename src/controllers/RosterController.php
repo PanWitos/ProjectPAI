@@ -5,6 +5,7 @@ require_once __DIR__.'/../models/Roster.php';
 require_once __DIR__.'/../models/Game.php';
 require_once __DIR__.'/../repository/RosterRepository.php';
 require_once __DIR__.'/../repository/GameRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class RosterController extends AppController
 {
@@ -12,12 +13,14 @@ class RosterController extends AppController
     private $messages = [];
     private $rosterRepository;
     private $gameRepository;
+    private $userRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->rosterRepository = new RosterRepository();
         $this->gameRepository = new GameRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function rosters()
@@ -30,7 +33,10 @@ class RosterController extends AppController
     {
         if($this->isPost())
         {
-            $roster = new Roster($_POST['title'], unserialize($_POST['game']), 0, 1);
+            session_start();
+            $authorId = $_SESSION['userid'];
+            $user = $this->userRepository->getUserById($authorId);
+            $roster = new Roster($_POST['title'], unserialize($_POST['game']), 0, 1, $user);
             $this->rosterRepository->addRoster($roster);
 
             return $this->render('rosters', ['rosters' => $this->rosterRepository->getRosters(), 'messages' => $this->messages]);

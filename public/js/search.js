@@ -30,6 +30,7 @@ function loadRosters(rosters) {
 }
 
 function createRoster(roster) {
+    console.log('siema');
     const template = document.querySelector("#roster-template");
 
     const clone = template.content.cloneNode(true);

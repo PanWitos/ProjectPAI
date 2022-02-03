@@ -21,8 +21,8 @@ class GameRepository extends Repository
         }
 
         return new Game(
-            $game['id'],
-            $game['name']
+            $game['game_id'],
+            $game['game_name']
         );
     }
 
@@ -38,7 +38,7 @@ class GameRepository extends Repository
         $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($games as $game){
-            $result[] = new Game($game['id'], $game['name']);
+            $result[] = new Game($game['game_id'], $game['game_name']);
         }
 
         return $result;

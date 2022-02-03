@@ -43,6 +43,7 @@ class SecurityController extends AppController
         //return $this->render('rosters');
 
         session_start();
+
         $_SESSION['userid'] = $user->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/rosters");

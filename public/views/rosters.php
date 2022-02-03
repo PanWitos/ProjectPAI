@@ -78,7 +78,7 @@ if (!isset($_SESSION['userid']))
             <div id="roster-1">
                 <h2><?= $roster-> getTitle(); ?></h2>
                 <div>
-                    <p>Game: </p><p><?= $roster-> getGame(); ?></p> <p>Author: John Smith</p> <p>Pts:</p><p><?= $roster-> getPoints(); ?></p>
+                    <p>Game: </p><p><?= $roster-> getGame(); ?></p><p>Author: </p> <p><?= $roster-> getAuthor(); ?></p> <p>Pts:</p><p><?= $roster-> getPoints(); ?></p>
                 </div>
             </div>
             <?php endforeach; ?>

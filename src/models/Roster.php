@@ -9,12 +9,13 @@ class Roster
     private $author;
     private $id;
 
-    public function __construct($title, $game, $points, $faction)
+    public function __construct($title, $game, $points, $faction, $author)
     {
         $this->title = $title;
         $this->game = $game;
         $this->points = $points;
         $this->faction = $faction;
+        $this->author = $author;
     }
 
     public function getTitle()
@@ -60,6 +61,11 @@ class Roster
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    public function getAuthorId()
+    {
+        return $this->author->getId();
     }
 
     public function setAuthor($author): void

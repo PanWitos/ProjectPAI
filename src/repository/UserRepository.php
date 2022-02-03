@@ -8,8 +8,7 @@ class UserRepository extends Repository
     public function getUser(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT u.id as uid, email, password, name, surname  FROM users u LEFT JOIN users_details ud 
-            ON u.id_users_detail = ud.id WHERE email = :email
+            SELECT *  FROM users LEFT JOIN users_details ON id_users_detail = ud_id WHERE email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -23,16 +22,58 @@ class UserRepository extends Repository
         $newUser = new User(
             $user['email'],
             $user['password'],
-            $user['name'],
-            $user['surname']
+            $user['user_name'],
+            $user['user_surname']
         );
-        $newUser->setId($user['uid']);
+        $newUser->setId($user['user_id']);
         return $newUser;
+    }
+
+    public function getUserById(int $id): ?User
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT *  FROM users LEFT JOIN users_details ON id_users_detail = ud_id WHERE user_id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user == false) {
+            return null;
+        }
+
+        $newUser = new User(
+            $user['email'],
+            $user['password'],
+            $user['user_name'],
+            $user['user_surname']
+        );
+        $newUser->setId($user['user_id']);
+        return $newUser;
+    }
+
+    public function getUsers(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users join users_details ON id_users_detail = ud_id
+        ');
+
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($users as $user){
+            $result[] = new User($user['email'], $user['password'], $user['user_name'], $user['user_surname']);
+        }
+
+        return $result;
     }
 
     public function addUser(User $user)
     {
-        $stmt = $this->database->connect()->prepare('INSERT INTO users_details (name, surname, phone) VALUES (?, ?, ?)');
+        $stmt = $this->database->connect()->prepare('INSERT INTO users_details (user_name, user_surname, phone) VALUES (?, ?, ?)');
 
         $stmt->execute([
             $user->getName(),
@@ -51,7 +92,7 @@ class UserRepository extends Repository
 
     public function getUserDetailsId(User $user): int
     {
-        $stmt = $this->database->connect()->prepare('SELECT * FROM users_details WHERE name = :name AND surname = :surname AND phone = :phone');
+        $stmt = $this->database->connect()->prepare('SELECT * FROM users_details WHERE user_name = :name AND user_surname = :surname AND phone = :phone');
         $name = $user->getName();
         $surname = $user->getSurname();
         $phone = $user->getPhone();
@@ -61,7 +102,7 @@ class UserRepository extends Repository
         $stmt->execute();
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $data['id'];
+        return $data['ud_id'];
     }
 
 }

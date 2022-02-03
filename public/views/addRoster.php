@@ -71,7 +71,7 @@ if (!isset($_SESSION['userid']))
                 ?>
                 <input name="title" type="text" placeholder="Title">
                 <select id="gameselect" name="game" required>
-                    <?php foreach($games as $game):?>
+                    <?php var_dump($games); foreach($games as $game):?>
                         <option value=<?=serialize($game)?>><?=$game?></option>
                     <?php endforeach; ?>
                 </select>

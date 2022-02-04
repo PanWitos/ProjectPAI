@@ -43,5 +43,21 @@ class Faction
         $this->game_id = $game_id;
     }
 
+    public function __serialize(): array
+    {
+        return ['id' => $this->id, 'name' => $this->name, 'game_id' => $this->game_id];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->id = $data['id'];
+        $this->name = $data['name'];
+        $this->game_id = $data['game_id'];
+    }
+
+    public function __toString() {
+        return $this->name;
+    }
+
 
 }

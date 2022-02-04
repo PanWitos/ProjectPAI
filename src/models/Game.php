@@ -34,13 +34,14 @@ class Game
 
     public function __serialize(): array
     {
-        return ['id' => $this->id, 'name' => $this->name];
+        return ['id' => $this->id, 'name' => $this->name, 'factions' => serialize($this->factions)];
     }
 
     public function __unserialize(array $data): void
     {
         $this->id = $data['id'];
         $this->name = $data['name'];
+        $this->factions = unserialize($data['factions']);
     }
 
     public function __toString() {

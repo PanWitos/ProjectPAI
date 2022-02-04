@@ -78,11 +78,11 @@ if (!isset($_SESSION['userid']))
                 <select id="gameselect" name="faction" required>
                     <?php foreach($games as $game):?>
                         <?php foreach($game->getFactions() as $faction):?>
-                        <option value=<?=$faction->getName()?>><?=$faction->getName()?></option>
+                            <option value=<?=serialize($faction)?>><?=$faction?></option>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
                 </select>
-                <button type="submit">Send</button>
+                <button type="submit">Add</button>
             </form>
         </section>
     </div>

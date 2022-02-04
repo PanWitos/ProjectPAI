@@ -85,7 +85,7 @@ textarea, input {
     border: 1px solid #FFFFFFFC;
     opacity: 1;
     width: 80%;
-    margin: 1em;
+    margin: 2vh auto 2vh auto;
     height: 7vh;
     text-align: left;
     font: normal normal normal 30px/36px Cambria;

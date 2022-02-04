@@ -36,9 +36,15 @@ class RosterController extends AppController
             session_start();
             $authorId = $_SESSION['userid'];
             $user = $this->userRepository->getUserById($authorId);
+            $game = unserialize($_POST['game']);
+            $factions = $game->getFactions();
+
+            if (!in_array(unserialize($_POST['faction']), $factions))
+            {
+                return $this->render("addRoster", ['messages' => ['Faction doesn\'t match the game'], 'games' => $this->gameRepository->getGames()]);
+            }
             $roster = new Roster($_POST['title'], unserialize($_POST['game']), 0, 1, $user);
             $this->rosterRepository->addRoster($roster);
-
             return $this->render('rosters', ['rosters' => $this->rosterRepository->getRosters(), 'messages' => $this->messages]);
         }
         $this->render("addRoster", ['messages' => $this->messages, 'games' => $this->gameRepository->getGames()]);

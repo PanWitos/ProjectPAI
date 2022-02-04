@@ -71,8 +71,15 @@ if (!isset($_SESSION['userid']))
                 ?>
                 <input name="title" type="text" placeholder="Title">
                 <select id="gameselect" name="game" required>
-                    <?php var_dump($games); foreach($games as $game):?>
+                    <?php foreach($games as $game):?>
                         <option value=<?=serialize($game)?>><?=$game?></option>
+                    <?php endforeach; ?>
+                </select>
+                <select id="gameselect" name="faction" required>
+                    <?php foreach($games as $game):?>
+                        <?php foreach($game->getFactions() as $faction):?>
+                        <option value=<?=$faction->getName()?>><?=$faction->getName()?></option>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
                 </select>
                 <button type="submit">Send</button>

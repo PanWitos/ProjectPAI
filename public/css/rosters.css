@@ -113,7 +113,8 @@ button:hover{
 #gameselect {
     width: 80%;
     height: 7vh;
-    margin: auto;
+    margin: 2vh auto 2vh auto;
+
 }
 
 @media only screen and (max-device-width: 425px) {

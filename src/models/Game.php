@@ -4,6 +4,7 @@ class Game
 {
     private $id;
     private $name;
+    private $factions;
 
     public function __construct(int $id, string $name)
     {
@@ -46,5 +47,14 @@ class Game
         return $this->name;
     }
 
+    public function addFaction($faction)
+    {
+        $this->factions[$faction->getId()] = $faction;
+    }
+
+    public function getFactions()
+    {
+        return $this->factions;
+    }
 
 }

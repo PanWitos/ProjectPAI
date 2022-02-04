@@ -72,5 +72,22 @@ class GameRepository extends Repository
         return $result;
     }
 
+    public function getFactionsByGame($id): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM factions where games_id = :id
+        ');
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+        $factions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($factions as $faction){
+            $result[] = new Faction($faction['faction_id'],$faction['faction_name'],$faction['games_id']);
+        }
+
+        return $result;
+    }
 
 }

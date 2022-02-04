@@ -2,6 +2,7 @@
 
 class Unit
 {
+    private $id;
     private $name;
     private $move;
     private $health;
@@ -9,8 +10,9 @@ class Unit
     private $faction;
     private $weapons;
 
-    public function __construct($name, $move, $health, $faction)
+    public function __construct($id, $name, $move, $health, $faction)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->move = $move;
         $this->health = $health;
@@ -76,6 +78,36 @@ class Unit
     {
         $this->weapons = $weapons;
     }
+
+    public function __serialize(): array
+    {
+        return ['id' => $this->id, 'name' => $this->name, 'move' => $this->move, 'health' => $this->health, 'faction' => serialize($this->faction), 'description' => str_replace(" ","_",$this->description)];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->id = $data['id'];
+        $this->name = $data['name'];
+        $this->move = $data['move'];
+        $this->health = $data['health'];
+        $this->faction = unserialize($data['faction']);
+        $this->description = str_replace("_"," ",$data['description']);
+    }
+
+    public function __toString() {
+        return $this->name;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
 
 
 }

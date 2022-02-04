@@ -80,6 +80,17 @@
     flex-direction: column;
 }
 
+.units-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.units-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
 textarea, input {
     background: linear-gradient(180deg, #DD00FF 0%, #22002C 100%) 0% 0% no-repeat padding-box;
     border: 1px solid #FFFFFFFC;
@@ -111,6 +122,13 @@ button:hover{
 }
 
 #gameselect {
+    width: 80%;
+    height: 7vh;
+    margin: 2vh auto 2vh auto;
+
+}
+
+#unitselect {
     width: 80%;
     height: 7vh;
     margin: 2vh auto 2vh auto;

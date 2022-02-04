@@ -14,7 +14,7 @@ if (!isset($_SESSION['userid']))
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-    <title>ROSTERS PAGE</title>
+    <title>UNIT PAGE</title>
 </head>
 
 <body>
@@ -22,9 +22,9 @@ if (!isset($_SESSION['userid']))
         <?php include('navbar.php');?>
         <div class="lowernav">
         </div>
-        <section class="rosters-form">
+        <section class="units-form">
             <h1>Upload</h1>
-            <form action="addRoster" method="POST" ENCTYPE="multipart/form-data">
+            <form action="addUnit?id=<?= $id;?>" method="POST" ENCTYPE="multipart/form-data">
                 <?php if(isset($messages))
                 {
                     foreach ($messages as $message)
@@ -32,20 +32,14 @@ if (!isset($_SESSION['userid']))
                         echo $message;
                     }
                 }
+
                 ?>
-                <input name="title" type="text" placeholder="Title">
-                <select id="gameselect" name="game" required>
-                    <?php foreach($games as $game):?>
-                        <option value=<?=serialize($game)?>><?=$game?></option>
+                <select id="unitselect" name="unit" required>
+                    <?php foreach($units as $unit):?>
+                        <option value=<?=serialize($unit)?>><?=$unit?></option>
                     <?php endforeach; ?>
                 </select>
-                <select id="gameselect" name="faction" required>
-                    <?php foreach($games as $game):?>
-                        <?php foreach($game->getFactions() as $faction):?>
-                            <option value=<?=serialize($faction)?>><?=$faction?></option>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
-                </select>
+                <input name="number" type="number" placeholder="Number">
                 <button type="submit">Add</button>
             </form>
         </section>

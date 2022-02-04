@@ -4,6 +4,7 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/Roster.php';
 require_once __DIR__.'/../models/Game.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../models/Faction.php';
 
 
 class RosterRepository extends Repository
@@ -11,7 +12,7 @@ class RosterRepository extends Repository
     public function getRoster(int $id): ?Roster
     {
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM rosters  JOIN games  ON games_id = game_id JOIN users ON author_id = user_id JOIN users_details on id_users_detail = ud_id WHERE roster_id = :id');
+        SELECT * FROM rosters  JOIN games  ON games_id = game_id JOIN users ON author_id = user_id JOIN users_details on id_users_detail = ud_id join factions on factions_id = faction_id WHERE roster_id = :id');
         $stmt->bindParam(':id',$id, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -24,13 +25,14 @@ class RosterRepository extends Repository
 
         $game = new Game($roster['game_id'],$roster['game_name']);
         $user = new User($roster['email'], $roster['password'],$roster['user_name'],$roster['user_surname']);
+        $faction = new Faction($roster['faction_id'], $roster['faction_name'], $roster['game_id']);
         $user->setId($roster['user_id']);
 
         $newRoster = new Roster(
             $roster['roster_title'],
             $game,
             $roster['points'],
-            1,
+            $faction,
             $user
         );
 
@@ -49,9 +51,8 @@ class RosterRepository extends Repository
 
 
         $startPoints = 0;
-        $factionsId = 1;
         $stmt->execute([
-            $roster->getAuthorId(), $roster->getTitle(), $roster->getGame()->getId(), $startPoints, $date->format('Y-m-d'), $factionsId
+            $roster->getAuthorId(), $roster->getTitle(), $roster->getGame()->getId(), $startPoints, $date->format('Y-m-d'), $roster->getFaction()->getId()
         ]);
     }
 

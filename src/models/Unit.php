@@ -11,6 +11,7 @@ class Unit
     private $weapons;
     private $number;
     private $cost;
+    private $image;
 
     public function __construct($id, $name, $move, $health, $faction)
     {

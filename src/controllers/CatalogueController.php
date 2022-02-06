@@ -4,6 +4,7 @@ require_once 'AppController.php';
 require_once __DIR__.'/../models/Roster.php';
 require_once __DIR__.'/../models/Game.php';
 require_once __DIR__.'/../models/Unit.php';
+require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/RosterRepository.php';
 require_once __DIR__.'/../repository/GameRepository.php';
 require_once __DIR__.'/../repository/UserRepository.php';
@@ -46,7 +47,9 @@ class CatalogueController extends AppController
 
     public function item()
     {
+        session_start();
+    $user = $this->userRepository->getUserById($_SESSION['userid']);
         $data = $this->unitRepository->getUnit($_GET['id']);
-        $this->render("item", ['messages' => $this->messages, 'unit' => $data]);
+        $this->render("item", ['messages' => $this->messages, 'unit' => $data, 'user' => $user]);
     }
 }

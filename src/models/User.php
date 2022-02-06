@@ -8,6 +8,7 @@ class User
     private $surname;
     private $phone;
     private $id;
+    private $image;
 
     public function __construct(string $email, string $password, string $name, string $surname)
     {
@@ -81,6 +82,16 @@ class User
     {
 
         return $this->name." ".$this->surname;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image): void
+    {
+        $this->image = $image;
     }
 
 

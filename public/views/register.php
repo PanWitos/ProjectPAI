@@ -20,7 +20,7 @@ if (isset($_SESSION['userid']))
 <body>
 <div class="container">
     <div class="register">
-        <form class="loginform" action="register" method="POST">
+        <form class="loginform" action="register" method="POST" enctype="multipart/form-data">
             <div class="insideform">
                 <div class="message">
                     <?php if(isset($messages))
@@ -38,6 +38,7 @@ if (isset($_SESSION['userid']))
                 <input class="inputspace" name="name" type="text" placeholder="Name">
                 <input class="inputspace" name="surname" type="text" placeholder="Surname">
                 <input class="inputspace" name="phone" type="text" placeholder="Phone">
+                <input class="uploadbutton" type="file" name="file">
             </div>
             <button type="SUBMIT" class="loginbutton">Register</button>
         </form>

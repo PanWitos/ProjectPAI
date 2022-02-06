@@ -26,6 +26,7 @@ class UserRepository extends Repository
             $user['user_surname']
         );
         $newUser->setId($user['user_id']);
+        $newUser->setImage($user['picture']);
         return $newUser;
     }
 
@@ -50,6 +51,7 @@ class UserRepository extends Repository
             $user['user_surname']
         );
         $newUser->setId($user['user_id']);
+        $newUser->setImage($user['picture']);
         return $newUser;
     }
 
@@ -73,12 +75,13 @@ class UserRepository extends Repository
 
     public function addUser(User $user)
     {
-        $stmt = $this->database->connect()->prepare('INSERT INTO users_details (user_name, user_surname, phone) VALUES (?, ?, ?)');
+        $stmt = $this->database->connect()->prepare('INSERT INTO users_details (user_name, user_surname, phone, picture) VALUES (?, ?, ?,?)');
 
         $stmt->execute([
             $user->getName(),
             $user->getSurname(),
-            $user->getPhone()
+            $user->getPhone(),
+            $user->getImage()
         ]);
 
         $stmt = $this->database->connect()->prepare('INSERT INTO users (id_users_detail, email, password) VALUES (?, ?, ?)');

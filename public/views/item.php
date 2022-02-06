@@ -26,37 +26,22 @@ if (!isset($_SESSION['userid']))
         <div class="subnavbutton">
             <p><?=$unit->getName(); ?></p>
         </div>
-        <div class="subnavbutton">
-        <a href="#"><img src="public/img/plus.png"></a>
-        </div>  
     </div>
     <div class="content">
         <div class="left-content">
             <div class="upper-content">
-                <div class="image-content">
-                    <img src="public/img/btm.png">
-                </div>
-                <div class="text-content">
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                </div>
+                <img src="public/img/btm.png">
             </div>
             <div class="lower-content">
-                <div class="info-bar"><p>a</p></div>
-                <div><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></div>
+                <div class="info-bar"><p>Description</p></div>
+                <div><p><?= $unit->getDescription(); ?></p></div>
             </div>
         </div>
         <div class="right-content">
-            <div class="info-bar"><p>a</p></div>
-            <div class="info-one"><p>a</p></div>
-            <div class="info-bar"><p>a</p></div>
-            <div class="info-two"><p>a</p></div>
-            <div class="info-bar"><p>a</p></div>
-            <div class="info-three"><p>a</p></div>
+            <div class="info-bar"><p>Health</p></div>
+            <div class="info-space"><p><?= $unit->getHealth() ?></p></div>
+            <div class="info-bar"><p>Move</p></div>
+            <div class="info-space"><p><?= $unit->getMove() ?></p></div>
         </div>
     </div>
 </div>

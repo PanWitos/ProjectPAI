@@ -1,4 +1,5 @@
 config.php
+.public/img/uploads
 erd.drawio
 .idea
 .idea/

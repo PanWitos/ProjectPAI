@@ -40,6 +40,7 @@
     justify-content: center;
     width: 80%;
     margin: 20px auto 20px auto;
+    font-size: 2em;
 }
 
 .unitname {
@@ -62,6 +63,11 @@
 
 .title {
     margin: 20px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
 
 @media only screen and (max-device-width: 425px) {

@@ -144,6 +144,7 @@
     overflow-wrap: break-word;
 }
 
+
 @media only screen and (max-device-width: 425px) {
     html, body {
         height: 100%;

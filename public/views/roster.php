@@ -29,16 +29,18 @@ if (!isset($_SESSION['userid']))
                     include('add.php');
                 }?>
         </div>
-        <div class="title"><h2><?= $roster->getTitle() ?></h2><p>Faction: <?= $roster->getFaction()->getName() ?></p></div>
-        <section class="units">
-            <div id="unitbox">
-                <div class="unitname"><h3>Unit name</h3></div><div class="unitnumber"><h3>Unit number</h3></div><div class="unitcost"><h3>Unit cost</h3></div>
-            </div>
-            <?php foreach ($units as $unit): ?>
+        <div class="content">
+            <div class="title"><h2><?= $roster->getTitle() ?></h2><p>Faction: <?= $roster->getFaction()->getName() ?></p></div>
+            <section class="units">
                 <div id="unitbox">
-                    <div class="unitname"><a href="http://localhost:8080/item?id=<?= $unit->getId(); ?>"><?= $unit->getName();?></a></div><div class="unitnumber"><?= $unit->getNumber();?></div><div class="unitcost"><?= $unit->getNumber()*$unit->getCost() ?></div>
+                    <div class="unitname"><h3>Unit name</h3></div><div class="unitnumber"><h3>Unit number</h3></div><div class="unitcost"><h3>Unit cost</h3></div>
                 </div>
-            <?php endforeach; ?>
-        </section>
+                <?php foreach ($units as $unit): ?>
+                    <div id="unitbox">
+                        <div class="unitname"><a href="http://localhost:8080/item?id=<?= $unit->getId(); ?>"><?= $unit->getName();?></a></div><div class="unitnumber"><?= $unit->getNumber();?></div><div class="unitcost"><?= $unit->getNumber()*$unit->getCost() ?></div>
+                    </div>
+                <?php endforeach; ?>
+            </section>
+        </div>
     </div>
 </body>

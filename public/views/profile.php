@@ -22,9 +22,6 @@ if (!isset($_SESSION['userid']))
     <?php include('navbar.php');?>
     <div class="lowernav">
         <div class="subnavbutton">
-            <a href="http://localhost:8080/rosters"><img src="public/img/editing.png"></a>
-        </div>
-        <div class="subnavbutton">
             <a href="logout"><img src="public/img/logout.png"></a>
         </div>
     </div>

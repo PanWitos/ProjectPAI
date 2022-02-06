@@ -36,7 +36,7 @@ if (!isset($_SESSION['userid']))
             </div>
             <?php foreach ($units as $unit): ?>
                 <div id="unitbox">
-                    <div class="unitname"><?= $unit->getName();?></div><div class="unitnumber"><?= $unit->getNumber();?></div><div class="unitcost"><?= $unit->getNumber()*$unit->getCost() ?></div>
+                    <div class="unitname"><a href="http://localhost:8080/item?id=<?= $unit->getId(); ?>"><?= $unit->getName();?></a></div><div class="unitnumber"><?= $unit->getNumber();?></div><div class="unitcost"><?= $unit->getNumber()*$unit->getCost() ?></div>
                 </div>
             <?php endforeach; ?>
         </section>

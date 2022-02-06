@@ -48,7 +48,7 @@ class CatalogueController extends AppController
     public function item()
     {
         session_start();
-    $user = $this->userRepository->getUserById($_SESSION['userid']);
+        $user = $this->userRepository->getUserById($_SESSION['userid']);
         $data = $this->unitRepository->getUnit($_GET['id']);
         $this->render("item", ['messages' => $this->messages, 'unit' => $data, 'user' => $user]);
     }

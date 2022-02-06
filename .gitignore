@@ -1,9 +1,7 @@
 config.php
-.public/img/uploads
-.public/img/uploads/
+public/img/uploads
 erd.drawio
 .idea
-.idea/
 .vscode
 .idea/dataSources.xml
 .idea/php.xml

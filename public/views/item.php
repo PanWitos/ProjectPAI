@@ -31,7 +31,7 @@ if (!isset($_SESSION['userid']))
         <div class="left-content">
             <div class="upper-content">
 <!--                <img src="public/img/btm.png">-->
-                <img src="public/img/uploads/<?= $user->getImage(); ?>">
+                <img src="public/img/uploads/<?= $unit->getImage(); ?>">
             </div>
             <div class="lower-content">
                 <div class="info-bar"><p>Description</p></div>

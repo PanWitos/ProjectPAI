@@ -133,6 +133,16 @@ class Unit
         $this->cost = $cost;
     }
 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image): void
+    {
+        $this->image = $image;
+    }
+
 
 
 }

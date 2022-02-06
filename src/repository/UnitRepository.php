@@ -77,6 +77,7 @@ class UnitRepository extends Repository
         $faction = new Faction($unit['faction_id'],$unit['faction_name'],$unit['game_id']);
         $newUnit = new Unit($unit['unit_id'],$unit['unit_name'],$unit['unit_move'],$unit['unit_health'], $faction);
         $newUnit->setDescription($unit['description']);
+        $newUnit->setImage($unit['unit_image']);
 
         return $newUnit;
     }

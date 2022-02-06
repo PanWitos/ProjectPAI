@@ -29,12 +29,14 @@ if (!isset($_SESSION['userid']))
                     include('add.php');
                 }?>
         </div>
+        <div class="title"><h2><?= $roster->getTitle() ?></h2><p>Faction: <?= $roster->getFaction()->getName() ?></p></div>
         <section class="units">
+            <div id="unitbox">
+                <div class="unitname"><h3>Unit name</h3></div><div class="unitnumber"><h3>Unit number</h3></div><div class="unitcost"><h3>Unit cost</h3></div>
+            </div>
             <?php foreach ($units as $unit): ?>
-                <div id="roster-1">
-                    <div>
-                        <p><?= $unit->getName();?></p>
-                    </div>
+                <div id="unitbox">
+                    <div class="unitname"><?= $unit->getName();?></div><div class="unitnumber"><?= $unit->getNumber();?></div><div class="unitcost"><?= $unit->getNumber()*$unit->getCost() ?></div>
                 </div>
             <?php endforeach; ?>
         </section>

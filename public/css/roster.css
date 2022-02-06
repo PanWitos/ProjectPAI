@@ -27,6 +27,43 @@
     margin: auto;
 }
 
+.units {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+#unitbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 20px auto 20px auto;
+}
+
+.unitname {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+.unitnumber {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+.unitcost {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+.title {
+    margin: 20px;
+}
+
 @media only screen and (max-device-width: 425px) {
     html, body {
         height: 100%;

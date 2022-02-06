@@ -9,6 +9,8 @@ class Unit
     private $description;
     private $faction;
     private $weapons;
+    private $number;
+    private $cost;
 
     public function __construct($id, $name, $move, $health, $faction)
     {
@@ -81,17 +83,19 @@ class Unit
 
     public function __serialize(): array
     {
-        return ['id' => $this->id, 'name' => $this->name, 'move' => $this->move, 'health' => $this->health, 'faction' => serialize($this->faction), 'description' => str_replace(" ","_",$this->description)];
+        return ['id' => $this->id, 'name' => str_replace(" ","_",$this->name), 'move' => $this->move, 'health' => $this->health, 'faction' => serialize($this->faction), 'description' => str_replace(" ","_",$this->description), 'number' => $this->number, 'cost' => $this->cost];
     }
 
     public function __unserialize(array $data): void
     {
         $this->id = $data['id'];
-        $this->name = $data['name'];
+        $this->name = str_replace("_", " ", $data['name']);
         $this->move = $data['move'];
         $this->health = $data['health'];
         $this->faction = unserialize($data['faction']);
         $this->description = str_replace("_"," ",$data['description']);
+        $this->number = $data['number'];
+        $this->cost = $data['cost'];
     }
 
     public function __toString() {
@@ -106,6 +110,26 @@ class Unit
     public function setId($id): void
     {
         $this->id = $id;
+    }
+
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    public function setNumber($number): void
+    {
+        $this->number = $number;
+    }
+
+    public function getCost()
+    {
+        return $this->cost;
+    }
+
+    public function setCost($cost): void
+    {
+        $this->cost = $cost;
     }
 
 

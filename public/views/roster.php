@@ -24,9 +24,10 @@ if (!isset($_SESSION['userid']))
             <div class="subnavbutton">
                 <a href="http://localhost:8080/rosters"><img src="public/img/left-arrow.png"></a>
             </div>
-            <div class="subnavbutton">
-                <a href="http://localhost:8080/addUnit?id=<?= $roster->getId();?>"><img src="public/img/plus.png"></a>
-            </div>  
+            <?php if($_SESSION['userid'] === $roster->getAuthor()->getId())
+                {
+                    include('add.php');
+                }?>
         </div>
         <section class="units">
             <?php foreach ($units as $unit): ?>

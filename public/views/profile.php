@@ -25,7 +25,7 @@ if (!isset($_SESSION['userid']))
             <a href="http://localhost:8080/rosters"><img src="public/img/editing.png"></a>
         </div>
         <div class="subnavbutton">
-            <a href="http://localhost:8080/rosters"><img src="public/img/logout.png"></a>
+            <a href="logout"><img src="public/img/logout.png"></a>
         </div>
     </div>
     <div class="content">

@@ -101,4 +101,13 @@ class SecurityController extends AppController
         }
         return true;
     }
+
+    public function logout()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+
+        return $this->render('login');
+    }
 }

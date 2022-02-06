@@ -70,6 +70,10 @@ a {
     text-decoration: none;
 }
 
+.purple {
+    background: transparent linear-gradient(0deg, #8800B1 0%, #440059 100%) 0% 0% no-repeat padding-box;
+}
+
 @media only screen and (max-device-width: 425px) {
     html, body {
         height: 100%;

@@ -28,7 +28,8 @@ class ProfileController extends AppController
             header("location: ../login");
         }
         $user = $this->userRepository->getUserById($_SESSION['userid']);
-        $this->render('profile', ['messages' => $this->messages, 'user' => $user]);
+        $favGames = $this->userRepository->getFavouriteGames($_SESSION['userid']);
+        $this->render('profile', ['messages' => $this->messages, 'user' => $user, 'games' => $favGames]);
     }
 
 }

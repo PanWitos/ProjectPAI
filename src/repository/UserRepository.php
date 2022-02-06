@@ -33,7 +33,7 @@ class UserRepository extends Repository
     public function getUserById(int $id): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT *  FROM users LEFT JOIN users_details ON id_users_detail = ud_id left join favourite_games on users_id = user_id left join games on games_id = game_id WHERE user_id = :id
+            SELECT *  FROM users LEFT JOIN users_details ON id_users_detail = ud_id WHERE user_id = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
@@ -52,6 +52,7 @@ class UserRepository extends Repository
         );
         $newUser->setId($user['user_id']);
         $newUser->setImage($user['picture']);
+        $newUser->setPhone($user['phone']);
         return $newUser;
     }
 
@@ -106,6 +107,29 @@ class UserRepository extends Repository
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['ud_id'];
+    }
+
+    public function getFavouriteGames($id)
+    {
+        $result = [];
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM favourite_games JOIN users ON users_id = user_id join games on games_id = game_id WHERE users_id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($games == false) {
+            return null;
+        }
+
+        foreach ($games as $game)
+        {
+            $result[] = new Game($game['game_id'],$game['game_name']);
+        }
+
+        return $result;
     }
 
 }

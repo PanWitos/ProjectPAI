@@ -39,6 +39,9 @@ if (!isset($_SESSION['userid']))
                     <div id="unitbox">
                         <div class="unitname"><a href="http://localhost:8080/item?id=<?= $unit->getId(); ?>"><?= $unit->getName();?></a></div><div class="unitnumber"><?= $unit->getNumber();?></div><div class="unitcost"><?= $unit->getNumber()*$unit->getCost() ?></div>
                     </div>
+                    <div id="unitbox" class="purple">
+                        <div class="unitname">HP: <?= $unit->getHealth();?></div><div class="unitnumber">Move: <?= $unit->getMove();?></div><div class="unitcost"></div>
+                    </div>
                 <?php endforeach; ?>
             </section>
         </div>

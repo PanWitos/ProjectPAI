@@ -36,24 +36,24 @@ if (!isset($_SESSION['userid']))
                 </div>
             </div>
             <div class="lower-content">
-                <div class="info-bar"></div>
+                <div class="info-bar"><p>Favourite games</p></div>
                 <div class="info">
-                    <p>Siema</p>
-                    <p>Siema</p>
-                    <p>Siema</p>
-                    <p>Siema</p>
+                    <?php if(!is_null($games))
+                    {
+                        foreach ($games as $game):
+                      ?>
+                    <p><?=$game->getName()?></p>
+                    <?php endforeach; }?>
                 </div>
             </div>
         </div>
         <div class="right-content">
-            <div class="info-bar"></div>
-            <p>Siema</p>
-            <div class="info-bar"></div>
-            <p>Siema</p>
-            <div class="info-bar"></div>
-            <p>Siema</p>
-            <div class="info-bar"></div>
-            <p>Siema</p>
+            <div class="info-bar"><p>Name</p></div>
+            <div class="info-space"><?= $user->getName(); ?></div>
+            <div class="info-bar"><p>Surname</p></div>
+            <div class="info-space"><?= $user->getSurname(); ?></div>
+            <div class="info-bar"><p>Phone</p></div>
+            <div class="info-space"><?= $user->getPhone(); ?></div>
         </div>
     </div>
 </div>

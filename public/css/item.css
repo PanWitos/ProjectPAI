@@ -171,10 +171,6 @@
         height: 50%;
     }
 
-    .text-content {
-        border-top: none;
-    }
-
     .image-content {
         border-top: none;
         overflow: hidden;

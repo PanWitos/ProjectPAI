@@ -21,12 +21,14 @@ if (!isset($_SESSION['userid']))
 <div class="basecontainer">
     <?php include('navbar.php');?>
     <div class="lowernav">
-
+        <div class="subnavbutton">
+            <a href="http://localhost:8080/catalogue"><img src="public/img/left-arrow.png"></a>
+        </div>
     </div>
     <div class = "content">
-        <?php foreach ($games as $game): ?>
+        <?php foreach ($factions as $faction): ?>
         <div class="gamebox">
-            <div class="game"><h2><a href="http://localhost:8080/factionCatalogue?id=<?= $game->getId();?>"><?=$game->getName()?></a></h2></div>
+            <div class="game"><h2><a href="http://localhost:8080/unitCatalogue?id=<?= $faction->getId();?>"><?=$faction->getName()?></a></h2></div>
         </div>
         <?php endforeach; ?>
     </div>

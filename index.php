@@ -7,8 +7,10 @@ $path = parse_url( $path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
 Router::get('rosters', 'RosterController');
-Router::get('catalogue', 'DefaultController');
-Router::get('item', 'DefaultController');
+Router::get('catalogue', 'CatalogueController');
+Router::get('factionCatalogue', 'CatalogueController');
+Router::get('unitCatalogue', 'CatalogueController');
+Router::get('item', 'CatalogueController');
 Router::get('profile', 'DefaultController');
 Router::get('find', 'DefaultController');
 Router::get('roster', 'RosterController');

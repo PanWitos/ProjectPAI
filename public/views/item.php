@@ -21,10 +21,10 @@ if (!isset($_SESSION['userid']))
     <?php include('navbar.php');?>
     <div class="lowernav">
         <div class="subnavbutton">
-            <a href="http://localhost:8080/catalogue"><img src="public/img/left-arrow.png"></a>
+            <a href="http://localhost:8080/unitCatalogue?id=<?= $unit->getFaction()->getId();?>"><img src="public/img/left-arrow.png"></a>
         </div>
         <div class="subnavbutton">
-            <p>Yout text Here</p>
+            <p><?=$unit->getName(); ?></p>
         </div>
         <div class="subnavbutton">
         <a href="#"><img src="public/img/plus.png"></a>

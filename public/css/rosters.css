@@ -135,6 +135,11 @@ button:hover{
 
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 @media only screen and (max-device-width: 425px) {
     html, body {
         height: 100%;

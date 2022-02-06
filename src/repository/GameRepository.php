@@ -10,7 +10,7 @@ class GameRepository extends Repository
     public function getGame(int $id): ?Game
     {
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM games WHERE id = :id');
+        SELECT * FROM games WHERE game_id = :id');
         $stmt->bindParam(':id',$id, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -25,6 +25,23 @@ class GameRepository extends Repository
             $game['game_id'],
             $game['game_name']
         );
+    }
+
+    public function getFaction(int $id): ?Faction
+    {
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM factions WHERE faction_id = :id');
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $faction = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($faction == false)
+        {
+            return null;
+        }
+
+        return new Faction($faction['faction_id'], $faction['faction_name'], $faction['games_id']);
     }
 
 

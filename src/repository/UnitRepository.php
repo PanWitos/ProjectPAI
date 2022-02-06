@@ -60,4 +60,23 @@ class UnitRepository extends Repository
             $id, $unit->getId(), $number
         ]);
     }
+
+    public function getUnit(int $id): ?Unit
+    {
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM units join factions on factions_id = faction_id WHERE unit_id = :id');
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $unit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($unit == false)
+        {
+            return null;
+        }
+        $faction = new Faction($unit['faction_id'],$unit['faction_name'],$unit['game_id']);
+
+
+        return new Unit($unit['unit_id'],$unit['unit_name'],$unit['unit_move'],$unit['unit_health'], $faction);
+    }
 }

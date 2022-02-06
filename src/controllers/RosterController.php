@@ -85,6 +85,10 @@ class RosterController extends AppController
 
     public function roster()
     {
+        if (is_null($_GET['id'] ) )
+        {
+            $this->render('rosters', ['messages' => $this->messages]);
+        }
         $roster = $this->rosterRepository->getRoster($_GET['id']);
         $this->render("roster", ['messages' => $this->messages, 'roster' => $roster, 'units' => $this->unitRepository->getUnitsByRoster($roster->getId())]);
     }

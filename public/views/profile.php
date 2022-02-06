@@ -14,18 +14,25 @@ if (!isset($_SESSION['userid']))
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-    <title>CATALOGUE PAGE</title>
+    <title>PROFILE PAGE</title>
 </head>
 
 <body>
 <div class="basecontainer">
     <?php include('navbar.php');?>
-    <div class="lowernav"></div>
+    <div class="lowernav">
+        <div class="subnavbutton">
+            <a href="http://localhost:8080/rosters"><img src="public/img/editing.png"></a>
+        </div>
+        <div class="subnavbutton">
+            <a href="http://localhost:8080/rosters"><img src="public/img/logout.png"></a>
+        </div>
+    </div>
     <div class="content">
         <div class="left-content">
             <div class="upper-content">
                 <div class="imagebox">
-                    <img src="public/img/naz.gif">
+                    <img src="public/img/uploads/<?= $user->getImage(); ?>">
                 </div>
             </div>
             <div class="lower-content">

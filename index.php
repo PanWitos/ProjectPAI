@@ -11,7 +11,7 @@ Router::get('catalogue', 'CatalogueController');
 Router::get('factionCatalogue', 'CatalogueController');
 Router::get('unitCatalogue', 'CatalogueController');
 Router::get('item', 'CatalogueController');
-Router::get('profile', 'DefaultController');
+Router::get('profile', 'ProfileController');
 Router::get('find', 'DefaultController');
 Router::get('roster', 'RosterController');
 Router::post('login', 'SecurityController');

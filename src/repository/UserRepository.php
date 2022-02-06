@@ -33,7 +33,7 @@ class UserRepository extends Repository
     public function getUserById(int $id): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT *  FROM users LEFT JOIN users_details ON id_users_detail = ud_id WHERE user_id = :id
+            SELECT *  FROM users LEFT JOIN users_details ON id_users_detail = ud_id left join favourite_games on users_id = user_id left join games on games_id = game_id WHERE user_id = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();

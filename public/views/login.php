@@ -36,7 +36,11 @@ if (isset($_SESSION['userid']))
                 </div>
                 <button type="SUBMIT" class="loginbutton">Login</button>
             </form>
+            <div class=>
+                <button class="registerbutton"><a href="register">Register</a></button>
+            </div>
         </div>
+
         <div class="logo">
             <img src="public/img/logo2.png">
         </div>

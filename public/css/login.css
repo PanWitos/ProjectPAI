@@ -68,6 +68,22 @@ body {
     background: transparent linear-gradient(0deg, #69007E 0%, #000000 100%) 0% 0% no-repeat padding-box;
 }
 
+.registerbutton{
+    background: transparent linear-gradient(180deg, #69007E 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    height: 7vh;
+    width: 70%;
+    margin-top: 12vh;
+    font: normal normal normal 30px/36px Cambria;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.registerbutton:hover{
+    background: transparent linear-gradient(0deg, #69007E 0%, #000000 100%) 0% 0% no-repeat padding-box;
+}
+
 .uploadbutton{
     background: transparent linear-gradient(180deg, #69007E 0%, #000000 100%) 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
@@ -98,6 +114,10 @@ body {
     border: 3px solid red;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
 
 @media only screen and (max-device-width: 425px) {
     .container {
@@ -113,7 +133,7 @@ body {
         order: 2;
     }
 
-    .loginbutton {
+    .loginbutton, registerbutton {
         font-size: 3em;
     }
 

@@ -63,6 +63,7 @@
 
 .title {
     margin: 20px;
+
 }
 
 a {
@@ -95,5 +96,9 @@ a {
 
     .navbar .navbutton:nth-child(1) img {
         opacity: 100%;
+    }
+
+    .title {
+        font-size: 3em;
     }
 }

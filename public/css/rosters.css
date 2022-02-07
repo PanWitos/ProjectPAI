@@ -167,6 +167,14 @@ a {
         order: 2;
     }
 
+    .rosters-form{
+        order: 2;
+    }
+
+    select, input{
+        font-size: 3em;
+    }
+
     .navbar .navbutton:nth-child(1) img {
         opacity: 100%;
     }

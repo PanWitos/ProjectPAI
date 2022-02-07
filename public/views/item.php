@@ -9,11 +9,8 @@ if (!isset($_SESSION['userid']))
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/navbar.css">
+    <?php include('header.php');?>
     <link rel="stylesheet" type="text/css" href="public/css/item.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <title>ITEM PAGE</title>
 </head>
 <body>

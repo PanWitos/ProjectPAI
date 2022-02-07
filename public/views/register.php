@@ -9,11 +9,9 @@ if (isset($_SESSION['userid']))
 <!DOCTYPE html>
 
 <head>
+    <?php include('header.php');?>
     <link rel="stylesheet" type="text/css" href="public/css/login.css"/>
     <script type="text/javascript" src="./public/js/script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <title>REGISTER PAGE</title>
 </head>
 

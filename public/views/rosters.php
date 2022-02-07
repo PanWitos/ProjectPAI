@@ -9,11 +9,8 @@ if (!isset($_SESSION['userid']))
 <!DOCTYPE html>
 
 <head>
+    <?php include('header.php');?>
     <link rel="stylesheet" type="text/css" href="public/css/rosters.css">
-    <link rel="stylesheet" type="text/css" href="public/css/navbar.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>ROSTERS PAGE</title>
 </head>

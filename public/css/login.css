@@ -17,6 +17,8 @@ body {
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
 }
 .logo{
     width:60%;
@@ -24,6 +26,9 @@ body {
     margin: auto;
 }
 
+.rbutton {
+    height: 6vh;
+}
 .loginform {
     height: 80%;
 }

@@ -132,4 +132,14 @@ class UserRepository extends Repository
         return $result;
     }
 
+    public function addFavourite($game_id, $id)
+    {
+        $stmt = $this->database->connect()->prepare('INSERT INTO favourite_games (users_id, games_id) VALUES (?, ?)');
+
+        $stmt->execute([
+            $id,
+            $game_id
+        ]);
+    }
+
 }

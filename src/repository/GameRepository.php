@@ -107,4 +107,21 @@ class GameRepository extends Repository
         return $result;
     }
 
+    public function getNotFavourite($id) {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            select * from games where game_name not in (select game_name from favourite_games join users on user_id = users_id join games on games_id = game_id where user_id = :id)
+        ');
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($games as $game){
+
+            $result[] = new Game($game['game_id'], $game['game_name']);
+        }
+        return $result;
+    }
+
 }

@@ -20,5 +20,6 @@ Router::post('register', 'SecurityController');
 Router::post('search', 'RosterController');
 Router::post('addUnit', 'RosterController');
 Router::post('logout', 'SecurityController');
+Router::post('favourites', 'ProfileController');
 
 Router::run($path);

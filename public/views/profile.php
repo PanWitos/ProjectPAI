@@ -30,7 +30,12 @@ if (!isset($_SESSION['userid']))
                 </div>
             </div>
             <div class="lower-content">
-                <div class="info-bar"><p>Favourite games</p></div>
+                <div class="info-bar">
+                    <p>Favourite games</p>
+                    <div class="subnavbutton">
+                        <a href="http://localhost:8080/favourites"><img src="public/img/editing.png"></a>
+                    </div>
+                </div>
                 <div class="info">
                     <?php if(!is_null($games))
                     {
